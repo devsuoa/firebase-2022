@@ -1,0 +1,17 @@
+.page-sections {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    height: calc(100vh - 90px);
+}
+
+.left-section {
+    justify-content: center;
+    background-color: #cce5f3;
+    padding: 30px;
+}
+
+.right-section {
+    justify-content: center;
+    background-color: #f1f6fa;
+    padding: 30px;
+}

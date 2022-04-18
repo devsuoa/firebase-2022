@@ -1,0 +1,47 @@
+.new-note {
+    background-color: rgb(212, 238, 216);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 10px 10px #adcbe3;
+  }
+  
+  .new-note > p {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  input {
+    width: 100%;
+    background: 0;
+    outline: none;
+    font-size: 1em;
+    transition: padding 0.3s 0.2s ease;
+    border-width: 0 0 2px;
+    border-color: rgb(90, 90, 90);
+  }
+  
+  textarea {
+    width: 100%;
+    height: 90px;
+    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    outline: none;
+  }
+  
+  .new-note > button {
+    width: 100%;
+    height: 30px;
+    background-color: rgb(3, 163, 3);
+    color: white;
+    border: none;
+  }
+  
+  .new-note > button:hover {
+    background-color: rgb(3, 197, 61);
+    transition: 0.2s ease;
+  }
