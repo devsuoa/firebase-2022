@@ -10,10 +10,12 @@ export default function MainPage({allNotes, setAllNotes}) {
             <div className="page-sections">
                 
                 <div className="left-section">
-                    <NewNote allNotes={allNotes} setAllNotes={setAllNotes} />
+
                 </div>
 
                 <div className="right-section">
+                    <h1>Today</h1>
+                    <NewNote allNotes={allNotes} setAllNotes={setAllNotes} />
                     <ViewNotes allNotes={allNotes} setAllNotes={setAllNotes} />
                 </div>
             </div>

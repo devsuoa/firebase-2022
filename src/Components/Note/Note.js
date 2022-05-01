@@ -21,10 +21,10 @@ export default function Note({noteTitle, noteCategory, noteMessage, allNotes, se
 
     return (
         <div className="note">
-            <p id="note-category" className="note-category">{noteCategory}</p>
-            <p id="note-title" className="note-title">{noteTitle}</p>
-            <p id="note-message" className="note-message">{noteMessage}</p>
-            <button className="note-button" onClick={deleteNote}>Delete</button>
+            <p id="note-category">{noteCategory}</p>
+            <p id="note-title">{noteTitle}</p>
+            <p id="note-message">{noteMessage}</p>
+            <button id="del-button" onClick={deleteNote}>Delete</button>
         </div>
     )
 }

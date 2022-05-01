@@ -1,6 +1,6 @@
 import React from "react";
 import "./ViewNotes.css";
-import Note from "../../Components/Note/Note";
+import Note from "../Note/Note";
 
 export default function ViewNotes({allNotes, setAllNotes}) {
     

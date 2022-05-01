@@ -8,19 +8,19 @@ export default function New({allNotes, setAllNotes}) {
         // Retrieve user text from DOM and save it into variables
         const noteTitle = document.getElementById("newTitle").value;
         const noteCategory = document.getElementById("newCategory").value;
-        const noteMessage = document.getElementById("newMessage").value;
+        const noteText = document.getElementById("newText").value;
 
         // Creating an object out of the variables
         const note = {
             title: noteTitle,
             category: noteCategory,
-            message: noteMessage
+            message: noteText
         }
 
         // CLearing the inputs on the page
         document.getElementById("newTitle").value = "";
         document.getElementById("newCategory").value = "";
-        document.getElementById("newMessage").value = "";
+        document.getElementById("newText").value = "";
 
         // Adding the new note object to the array containing all notes
         setAllNotes([...allNotes, note]);
@@ -28,11 +28,10 @@ export default function New({allNotes, setAllNotes}) {
 
     return (
         <div className="new-note">
-            <p>Create New Note</p>
-            <input id="newTitle" type="text" placeholder="Title" name="title"/>
-            <input id="newCategory" type="text" placeholder="Category" name="category"/>
-            <textarea id="newMessage" name="message"></textarea>
-            <button onClick={createNote} type="submit">Create</button>
+            <input id="newTitle" type="text" placeholder="Enter task title"/>
+            <input id="newCategory" type="text" placeholder="Enter a category"/>
+            <textarea id="newText" placeholder="Enter descriptions"></textarea>
+            <button id="addButton" onClick={createNote} type="submit">Add</button>
         </div>
     )
 }
