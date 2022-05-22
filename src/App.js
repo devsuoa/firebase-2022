@@ -6,7 +6,7 @@ import './App.css';
 import MainPage from './Components/MainPage/MainPage';
 
 
-const firebaseConfig = { // todo put in external file
+const firebaseConfig = { 
   // your api key
 };
 
@@ -22,7 +22,12 @@ function App() {
     const getNotes = async () => {
       const notesRef = collection(db, 'notes');
       const notesSnapShot = await getDocs(notesRef)
-      const notesList = notesSnapShot.docs.map(doc => doc.data());
+      const notesList = notesSnapShot.docs.map( snapShot => {
+        return {
+          ...snapShot.data(),
+          ref: snapShot.ref
+        }
+      });
       setAllNotes(notesList)
     }
     getNotes()
@@ -36,7 +41,5 @@ function App() {
     </div>
   );
 }
-
-
 
 export default App;

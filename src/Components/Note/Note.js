@@ -1,16 +1,11 @@
-import { collection, deleteDoc, getDocs, query, where } from "firebase/firestore/lite";
+import { deleteDoc } from "firebase/firestore/lite";
 import React from "react";
-import { db } from "../../App";
 import "./Note.css";
 
-export default function Note({noteTitle, noteCategory, noteMessage, allNotes, setAllNotes}) {
+export default function Note({noteTitle, noteCategory, noteMessage, allNotes, setAllNotes, noteRef}) {
 
     async function deleteNote() {
-      const notesQuery = query(collection(db, 'notes'), where('title', '==', noteTitle), where('message', '==', noteMessage))
-      const notesQuerySnapshot = await getDocs(notesQuery)
-      notesQuerySnapshot.forEach( doc => {
-          deleteDoc(doc.ref)
-      })
+      deleteDoc(noteRef)
       // Create new array to store all notes except deleted note
       const newAllNotes = [];
 

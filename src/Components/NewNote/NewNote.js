@@ -18,7 +18,7 @@ export default function New({allNotes, setAllNotes}) {
         const note = {
           title: noteTitle,
           category: noteCategory,
-          message: noteText
+          message: noteText,
         }
         
         // CLearing the inputs on the page
@@ -28,6 +28,7 @@ export default function New({allNotes, setAllNotes}) {
         
         // Adding the new note object to the array containing all notes
         addDoc(notesRef, note).then( res => {
+          note['ref'] = res
           setAllNotes([...allNotes, note]);
         })
     }
