@@ -9,7 +9,7 @@ export default function Note({noteTitle, noteCategory, noteMessage, allNotes, se
       const newAllNotes = [];
       deleteDoc(noteRef).then(() => {
         allNotes.forEach(note => {
-          if (note.title !== noteTitle && note.category !== noteCategory) {
+          if (noteRef.id !== note.Ref.id) {
               newAllNotes.push(note);
           }
         })
