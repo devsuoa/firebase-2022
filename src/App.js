@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import './App.css';
 import MainPage from './Components/MainPage/MainPage';
+import { initializeApp } from 'firebase/app'
+import { getFirestore } from 'firebase/firestore/lite'
+
+const firebaseConfig = { 
+  // your api key
+};
+
+
+const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
 
 function App() {
 
