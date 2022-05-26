@@ -28,7 +28,7 @@ export default function New({allNotes, setAllNotes}) {
         
         // Adding the new note object to the array containing all notes
         addDoc(notesRef, note).then( res => {
-          note['ref'] = res
+          note['id'] = res.id
           setAllNotes([...allNotes, note]);
         })
     }

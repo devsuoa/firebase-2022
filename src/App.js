@@ -19,19 +19,17 @@ function App() {
   const [allNotes, setAllNotes] = useState([]);
   
   useEffect(() => {
-    const getNotes = async () => {
-      const notesRef = collection(db, 'notes');
-      const notesSnapShot = await getDocs(notesRef)
+    const notesRef = collection(db, 'notes');
+    getDocs(notesRef).then( notesSnapShot => {
       const notesList = notesSnapShot.docs.map( snapShot => {
         return {
           ...snapShot.data(),
-          ref: snapShot.ref
+          id: snapShot.id
         }
       });
       setAllNotes(notesList)
-    }
-    getNotes()
-  }, []);
+    })
+});
 
 
 
